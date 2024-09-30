@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500" prefWidth="600" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gradesanalyzer.FXMLDocumentController">
+    <children>
+
+        <!-- TextField for file input -->
+        <TextField fx:id="readGradesTextField" layoutX="20.0" layoutY="56.0" prefHeight="25.0" prefWidth="409.0" promptText="Enter file name here" />
+
+        <!-- "Select File" Button moved to the right of TextField -->
+        <Button layoutX="440.0" layoutY="56.0" onAction="#handleReadGrades" prefWidth="130" text="Select File" />
+
+        <!-- Labels -->
+        <Label alignment="CENTER" layoutX="200.0" layoutY="10.0" text="Grades Analyzer" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <!-- Buttons for calculating mean, std dev, and assigning letter grades -->
+        <Button layoutX="20" layoutY="120" onAction="#handleCalculateMean" prefWidth="130" text="Calculate Mean" />
+        <Button layoutX="160" layoutY="120" onAction="#handleCalculateStdDev" prefWidth="130" text="Calculate Std Dev" />
+        <Button layoutX="300" layoutY="120" onAction="#handleAssignLetterGrades" prefWidth="130" text="Assign Letter Grades" />
+
+        <!-- "Clear TextField" Button aligned with other buttons -->
+        <Button layoutX="440" layoutY="120" onAction="#handleClearButton" prefWidth="130" text="Clear" />
+
+        <!-- TextArea for output -->
+        <TextArea fx:id="outputArea" layoutX="20" layoutY="170" prefHeight="280" prefWidth="550" />
+
+    </children>
+</AnchorPane>
