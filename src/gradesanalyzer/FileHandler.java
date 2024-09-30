@@ -99,51 +99,5 @@ public class FileHandler {
         fh.openFileandRead();
         fh.readFile(gradesToRead);
     }
-
-    public static void main(String[] args) {
-        ArrayList<String> grades = new ArrayList<>() {{
-            add("A");
-            add("A-");
-            add("B+");
-            add("B");
-            add("B-");
-            add("C+");
-            add("C");
-            add("C-");
-            add("D+");
-            add("D");
-            add("D-");
-            add("F");
-        }};
-
-        ArrayList<String> gradesOut = new ArrayList<>();
-        ArrayList<String> gradesIn = new ArrayList<>();
-
-        Scanner scan = new Scanner(System.in);
-        String userInput = "";
-        while (true) {
-            System.out.print("Enter grade: ");
-            userInput = scan.next();
-            if (userInput.equalsIgnoreCase("exit")) {
-                break;
-            }
-            if (grades.contains(userInput)) {
-                gradesOut.add(userInput);
-            } else {
-                System.out.println("Invalid grade, try again: ");
-            }
-        }
-
-        System.out.println("Writing to file");
-        for (String str: gradesOut) {
-            System.out.printf("%s%n", str); 
-        }
-        
-
-        FileHandler fh = new FileHandler("grades.txt", "grades.txt");
-        FileHandler.writeGrades(gradesOut, fh);
-        FileHandler.readGrades(gradesIn, fh);
-        scan.close();
-    }
 }
 

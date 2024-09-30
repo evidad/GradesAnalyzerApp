@@ -103,10 +103,8 @@ public class FXMLDocumentController implements Initializable {
         if (gradesAnalyzer != null) {
             outputArea.appendText("Assigning letter grades:\n");
 
-            // Get the list of letter grades from the GradesAnalyzerClass
-            List<String> letterGrades = gradesAnalyzer.assignLetterGrades();  // Correct method call
+            List<String> letterGrades = gradesAnalyzer.assignLetterGrades();
 
-            // Display each letter grade in the TextArea
             letterGrades.forEach(grade -> outputArea.appendText(grade + "\n"));
         } else {
             outputArea.appendText("Please load grades first.\n");
@@ -116,7 +114,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleClearButton(ActionEvent event) {
         outputArea.clear(); 
-        readGradesTextField.clear();// Clear the text in the TextField
+        readGradesTextField.clear();
         m_gradesFromFile.clear();
         gradesAnalyzer = null;
     }

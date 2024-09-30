@@ -27,13 +27,10 @@ public class GradesAnalyzer {
         return grades;
     }
 
-    // Method to read grades using FileHandler
     public void loadGrades() {
-        FileHandler.readGrades(grades, fileHandler); // Use FileHandler to read grades into the ArrayList
-//        System.out.println("Grades loaded: " + grades); 
+        FileHandler.readGrades(grades, fileHandler);
     }
 
-    // You can now add other methods to analyze the grades
     public double getMeanGrades() {
         List<Double> convertedGradesList = grades.stream()
                 .map(Double::parseDouble)
@@ -62,9 +59,9 @@ public class GradesAnalyzer {
         double stdDev = getStandardDeviation();
 
         grades.stream()
-              .map(Double::parseDouble)  // Convert each String to a Double
+              .map(Double::parseDouble)
               .forEach(score -> {
-                  String letterGrade = assignLetterGrade(score);  // Correctly pass the score as a double
+                  String letterGrade = assignLetterGrade(score);
                   letterGrades.add("Score: " + score + " -> Letter Grade: " + letterGrade);
               });
 
